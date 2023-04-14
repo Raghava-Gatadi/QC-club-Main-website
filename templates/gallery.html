@@ -1,9 +1,120 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block gallery %}text-[#eeb95d] text-3xl font-medium max-sm:text-sm{% endblock gallery %}
-{% block links %}
-<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
-{% endblock links %}
+{% block style %}
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+
+  *{
+      font-family: Nunito;
+  }
+  body{
+      background-color: #000000;
+  }
+
+  h1{
+      font-family: Nunito;
+      font-size:50px;
+      text-align:center;
+      color:white;
+      padding:1%;
+    }
+    #gallery{
+      padding: 0 3rem;
+      -webkit-column-count:4;
+      -moz-column-count:4;
+      column-count:4;
+      
+      -webkit-column-gap:20px;
+      -moz-column-gap:20px;
+      column-gap:20px;
+    }
+    @media (max-width:1200px){
+      #gallery{
+      -webkit-column-count:3;
+      -moz-column-count:3;
+      column-count:3;
+        
+      -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+      column-gap: 20px;
+    }
+    }
+    @media (max-width:800px){
+      #gallery{
+      -webkit-column-count:2;
+      -moz-column-count:2;
+      column-count:2;
+        
+      -webkit-column-gap:20px;
+      -moz-column-gap:20px;
+      column-gap:20px;
+    }
+    }
+    @media (max-width:600px){
+      #gallery{
+      -webkit-column-count:1;
+      -moz-column-count:1;
+      column-count:1;
+    }  
+    }
+    #gallery img,#gallery video {
+      width:100%;
+      height:auto;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 4% auto;
+      /* box-shadow: 0px 0px 10px #ffffff; */
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+    #gallery img:hover{
+      transform: scale(1.03);
+    }
+    .modal-img,.model-vid{
+      width:100%;
+      height:auto;
+    }
+    .modal-body{
+      padding:0px;
+    }
+
+    .container-fluid .popup-image {
+      position:fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      height: 35%;
+      width: 35%;
+      z-index: 100;
+    }
+
+    .container-fluid .popup-image span{
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 40px;
+      font-weight: bolder;
+      color: white;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .container-fluid .popup-image img{
+      position: absolute;
+      top: 0%;
+      left: 75%;
+      transform: translate(-50%,-50%);
+      border: 5px solid white;
+      border-radius: 5px;
+      width: 750px;
+      object-fit: cover;
+    }
+    .container-fluid .popup-image img{
+      transform: scale(1);
+    }
+{% endblock style %}
 {% block title %}Gallery{% endblock title %}
 {% block content %}
 <div class="text-white text-center mb-8">
