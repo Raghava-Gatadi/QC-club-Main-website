@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'qc_website',
         'USER': 'postgres',
         'PASSWORD': 'badrikarthik',
