@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}Edit members{% endblock title %}
+{% block content %}
+    <div class="mx-[20%] text-white text-center">
+        <div class=" my-8 p-4 bg-[#333333] rounded-xl">
+            <div class='justify-center flex gap-2 items-end'>
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">Head Team</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'update-team' 'head-team'%}">Edit</a>
+            </div>
+            <hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-evenly text-xl font-medium my-2">
+                <h1 class=' min-w-[45%]'>Name</h1>
+                <h1 class=' min-w-[45%]'>Position</h1>
+            </div>
+            {% for mem in head_members.members.all %}
+                <div class="flex justify-evenly font-medium text-[#aaaaaa]">
+                    <h1 class=' min-w-[45%]'>{{mem.name}}</h1>
+                    <h1 class=' min-w-[45%]'>{{mem.position}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="my-8 p-4 bg-[#333333] rounded-xl text-center">
+            <div class="flex gap-2 items-end justify-center">
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">Technical Team</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'update-team' 'technical-team'%}">Edit</a>
+            </div><hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-evenly text-xl font-medium my-2">
+                <h1 class=' min-w-[45%]'>Name</h1>
+                <h1 class=' min-w-[45%]'>Position</h1>
+            </div>
+            {% for mem in technical_members.members.all %}
+                <div class="flex justify-evenly font-medium text-[#aaaaaa]">
+                    <h1 class=' min-w-[45%]'>{{mem.name}}</h1>
+                    <h1 class=' min-w-[45%]'>{{mem.position}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="my-8 p-4 bg-[#333333] rounded-xl text-center">
+            <div class="flex gap-2 items-end justify-center">
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">Content Team</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'update-team' 'content-team'%}">Edit</a>
+            </div><hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-evenly text-xl font-medium my-2">
+                <h1 class=' min-w-[45%]'>Name</h1>
+                <h1 class=' min-w-[45%]'>Position</h1>
+            </div>
+            {% for mem in content_members.members.all %}
+                <div class="flex justify-evenly font-medium text-[#aaaaaa]">
+                    <h1 class=' min-w-[45%]'>{{mem.name}}</h1>
+                    <h1 class=' min-w-[45%]'>{{mem.position}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="my-8 p-4 bg-[#333333] rounded-xl text-center">
+            <div class="flex gap-2 items-end justify-center">
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">Web-D Team</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'update-team' 'webd-team'%}">Edit</a>
+            </div><hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-evenly text-xl font-medium my-2">
+                <h1 class=' min-w-[45%]'>Name</h1>
+                <h1 class=' min-w-[45%]'>Position</h1>
+            </div>
+            {% for mem in web_members.members.all %}
+                <div class="flex justify-evenly font-medium text-[#aaaaaa]">
+                    <h1 class=' min-w-[45%]'>{{mem.name}}</h1>
+                    <h1 class=' min-w-[45%]'>{{mem.position}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="my-8 p-4 bg-[#333333] rounded-xl text-center">
+            <div class="flex gap-2 items-end justify-center">
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">Social Team</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'update-team' 'social-team'%}">Edit</a>
+            </div><hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-evenly text-xl font-medium my-2">
+                <h1 class=' min-w-[45%]'>Name</h1>
+                <h1 class=' min-w-[45%]'>Position</h1>
+            </div>
+            {% for mem in social_members.members.all %}
+                <div class="flex justify-evenly font-medium text-[#aaaaaa]">
+                    <h1 class=' min-w-[45%]'>{{mem.name}}</h1>
+                    <h1 class=' min-w-[45%]'>{{mem.position}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="my-8 p-4 bg-[#333333] rounded-xl text-center">
+            <div class="flex gap-2 items-end justify-center">
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">Event Team</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'update-team' 'event-team'%}">Edit</a>
+            </div><hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-evenly text-xl font-medium my-2">
+                <h1 class=' min-w-[45%]'>Name</h1>
+                <h1 class=' min-w-[45%]'>Position</h1>
+            </div>
+            {% for mem in event_members.members.all %}
+                <div class="flex justify-evenly font-medium text-[#aaaaaa]">
+                    <h1 class=' min-w-[45%]'>{{mem.name}}</h1>
+                    <h1 class=' min-w-[45%]'>{{mem.position}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="my-8 p-4 bg-[#333333] rounded-xl text-center">
+            <div class="flex gap-2 items-end justify-center">
+                <h1 class="text-3xl font-semibold text-[#eeb95d]">All Club Members</h1>
+                <a class='font-light text-sm hover:text-[#eeb95d]' href="{% url 'add-member' %}">Add Member</a>
+            </div><hr class='my-2 mx-8 border border-[#191919]'>
+            <div class="flex justify-between text-xl font-medium my-2">
+                <h1 class='min-w-[30%]'>Name</h1>
+                <h1 class='min-w-[30%]'>Team</h1>
+                <h1 class='min-w-[30%]'>Actions</h1>
+            </div>
+            {% for mem in members %}
+                <div class="flex justify-between font-medium text-[#aaaaaa]">
+                    <h1 class='min-w-[30%]'>{{mem.name}}</h1>
+                    <h1 class='min-w-[30%]'>{{mem.team_name}}</h1>
+                    <div class='min-w-[30%]'>
+                        <a class='hover:text-[#eeb95d]'  href="{% url 'update-member' mem.slug%}">Edit</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock content %}

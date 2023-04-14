@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block team %}text-[#eeb95d] text-3xl font-medium max-sm:text-sm{% endblock team %}
+{% block title %}Team{% endblock title %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="text-6xl font-Nunito font-medium text-white mb-6">Meet the <span class="text-[#eeb95d]">Team</span></h1>
+        <div class="flex justify-center items-center gap-10 flex-wrap">
+            {% for memb in head_team %}
+            <div class="text-white text-left hover:scale-[1.08] duration-500">
+                <img class="h-[15rem]" src="/media/{{memb.profile_photo}} " alt="">
+                <div class='flex justify-between items-start'>
+                    <div>
+                        <h1 class="text-lg font-medium"> {{memb.name}} </h1>
+                        <h1 class="text-sm text-[#777777] font-medium"> {{memb.position}} </h1>
+                    </div>
+                    <div class='flex justify-end gap-2 items-center pt-1 pr-2'>
+                        {% if memb.linked_in %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="{{memb.linked_in}}"><i class="fa-brands fa-x fa-linkedin-in"></i></a> </div>   
+                        {% endif %}
+                        {% if memb.github %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="social-icons" target = '#' href="{{memb.github}}"><i class="fa-brands fa-github"></i></a> </div>  
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="text-center text-white mt-6 flex justify-center items-center gap-4 flex-wrap">
+        <div>
+            <a href="{% url 'team-page' 'technical-team'%}"><h1 class="font-semibold text-3xl mb-3"><span class="text-[#eeb95d]">Technical</span> Team</h1></a>
+            <div class="text-white text-left pl-2 hover:scale-[1.08] duration-500">
+                <img class="h-[15rem]" src="/media/{{tech_lead.profile_photo}} " alt="">
+                <div class='flex justify-between items-start'>
+                    <div>
+                        <h1 class="text-lg font-medium"> {{tech_lead.name}} </h1>
+                        <h1 class="text-sm text-[#777777] font-medium"> {{tech_lead.position}} </h1>
+                    </div>
+                    <div class='flex justify-end gap-2 items-center pt-1 pr-2'>
+                        {% if tech_lead.linked_in %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="{{tech_lead.linked_in}}"><i class="fa-brands fa-x fa-linkedin-in"></i></a> </div>   
+                        {% endif %}
+                        {% if tech_lead.github %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="social-icons" target = '#' href="{{tech_lead.github}}"><i class="fa-brands fa-github"></i></a> </div>  
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="{% url 'team-page' 'content-team'%}"><h1 class="font-semibold text-3xl mb-3"><span class="text-[#eeb95d]">Content</span> Team</h1></a>
+            <div class="text-white text-left pl-2 hover:scale-[1.08] duration-500">
+                <img class="h-[15rem]" src="/media/{{content_lead.profile_photo}} " alt="">
+                <div class='flex justify-between items-start'>
+                    <div>
+                        <h1 class="text-lg font-medium"> {{content_lead.name}} </h1>
+                        <h1 class="text-sm text-[#777777] font-medium"> {{content_lead.position}} </h1>
+                    </div>
+                    <div class='flex justify-end gap-2 items-center pt-1 pr-2'>
+                        {% if content_lead.linked_in %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="{{content_lead.linked_in}}"><i class="fa-brands fa-x fa-linkedin-in"></i></a> </div>   
+                        {% endif %}
+                        {% if content_lead.github %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="social-icons" target = '#' href="{{content_lead.github}}"><i class="fa-brands fa-github"></i></a> </div>  
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if social_lead %}
+        <div>
+            <a href="{% url 'team-page' 'social-team'%}"><h1 class="font-semibold text-3xl mb-3"><span class="text-[#eeb95d]">Social</span> Team</h1></a>
+            <div class="text-white text-left pl-2 hover:scale-[1.08] duration-500">
+                <img class="h-[15rem]" src="/media/{{social_lead.profile_photo}} " alt="">
+                <div class='flex justify-between items-start'>
+                    <div>
+                        <h1 class="text-lg font-medium"> {{social_lead.name}} </h1>
+                        <h1 class="text-sm text-[#777777] font-medium"> {{social_lead.position}} </h1>
+                    </div>
+                    <div class='flex justify-end gap-2 items-center pt-1 pr-2'>
+                        {% if social_lead.linked_in %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="{{social_lead.linked_in}}"><i class="fa-brands fa-x fa-linkedin-in"></i></a> </div>   
+                        {% endif %}
+                        {% if social_lead.github %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="social-icons" target = '#' href="{{social_lead.github}}"><i class="fa-brands fa-github"></i></a> </div>  
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div>
+            <a href="{% url 'team-page' 'event-team'%}"><h1 class="font-semibold text-3xl mb-3"><span class="text-[#eeb95d]">Event</span> Team</h1></a>
+            <div class="text-white text-left pl-2 hover:scale-[1.08] duration-500">
+                <img class="h-[15rem]" src="/media/{{event_lead.profile_photo}} " alt="">
+                <div class='flex justify-between items-start'>
+                    <div>
+                        <h1 class="text-lg font-medium"> {{event_lead.name}} </h1>
+                        <h1 class="text-sm text-[#777777] font-medium"> {{event_lead.position}} </h1>
+                    </div>
+                    <div class='flex justify-end gap-2 items-center pt-1 pr-2'>
+                        {% if event_lead.linked_in %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="{{event_lead.linked_in}}"><i class="fa-brands fa-x fa-linkedin-in"></i></a> </div>   
+                        {% endif %}
+                        {% if event_lead.github %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="social-icons" target = '#' href="{{event_lead.github}}"><i class="fa-brands fa-github"></i></a> </div>  
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="{% url 'team-page' 'web-d-team'%}"><h1 class="font-semibold text-3xl mb-3"><span class="text-[#eeb95d]">Web-D</span> Team</h1></a>
+            <div class="text-white text-left pl-2 hover:scale-[1.08] duration-500">
+                <img class="h-[15rem]" src="/media/{{web_lead.profile_photo}} " alt="">
+                <div class='flex justify-between items-start'>
+                    <div>
+                        <h1 class="text-lg font-medium"> {{web_lead.name}} </h1>
+                        <h1 class="text-sm text-[#777777] font-medium"> {{web_lead.position}} </h1>
+                    </div>
+                    <div class='flex justify-end gap-2 items-center pt-1 pr-2'>
+                        {% if web_lead.linked_in %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="{{web_lead.linked_in}}"><i class="fa-brands fa-x fa-linkedin-in"></i></a> </div>   
+                        {% endif %}
+                        {% if web_lead.github %}
+                        <div class="hover:scale-[1.2] duration-500 hover:text-[#e4bc78] text-xl"><a class="social-icons" target = '#' href="{{web_lead.github}}"><i class="fa-brands fa-github"></i></a> </div>  
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

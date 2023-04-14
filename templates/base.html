@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block links %}{% endblock links %}
+    <title> {% block title %}{% endblock title %} </title>
+</head>
+<body class="bg-black">
+    <nav>
+        <div class="flex justify-center text-white text-2xl gap-10 py-4 items-center mb-4 max-sm:text-sm">
+            <a class="{% block home %}{% endblock home %} hover:scale-[1.1] hover:text-[#eeb95d]" href="{% url 'home' %}">Home</a>
+            <a class="{% block gallery %}{% endblock gallery %} hover:scale-[1.1] hover:text-[#eeb95d]" href="{% url 'gallery' %}">Gallery</a>
+            <a class="{% block team %}{% endblock team %} hover:scale-[1.1] hover:text-[#eeb95d]" href="{% url 'team' %}">Team</a>
+            <a class="{% block blogs %}{% endblock blogs %} hover:scale-[1.1] hover:text-[#eeb95d]" href="https://blog-qc-club.netlify.app/">Blogs</a>
+            <a class="{% block magazine %}{% endblock magazine %} hover:scale-[1.1] hover:text-[#eeb95d]" href="{% url 'magazine' %}">Magazines</a>
+            <a class="{% block contact %}{% endblock contact %} hover:scale-[1.1] hover:text-[#eeb95d]" href="{% url 'contact' %}">Contact</a>
+            {% if user.is_authenticated %}
+            <a class="hover:scale-[1.1] hover:text-[#eeb95d]" href="{% url 'logout' %}">logout</a>
+            {% endif %}
+          </div>
+    </nav>
+    {% block content %}{% endblock content %}
+</body>
+</html>
