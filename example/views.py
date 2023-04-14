@@ -72,11 +72,11 @@ def edit_details(request):
     event_team = Team_Name.objects.get(name="Event Team")
     web_team = Team_Name.objects.get(name="Web-D Team")
     head_members = Team_Member.objects.all().first()
-    technical_members = Team_Member.objects.get(team_name=technical_team)
-    content_members = Team_Member.objects.get(team_name=content_team)
-    social_members = Team_Member.objects.get(team_name=social_team)
-    event_members = Team_Member.objects.get(team_name=event_team)
-    web_members = Team_Member.objects.get(team_name=web_team)
+    technical_members = Team_Member.objects.filter(team_name=technical_team).first()
+    content_members = Team_Member.objects.filter(team_name=content_team).first()
+    social_members = Team_Member.objects.filter(team_name=social_team).first()
+    event_members = Team_Member.objects.filter(team_name=event_team).first()
+    web_members = Team_Member.objects.filter(team_name=web_team).first()
     return render(request, 'edit_details.html', {
         'members': members,
         'head_members': head_members,
