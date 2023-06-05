@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.core.mail import send_mail
 from .forms import ContactUsForm
 
 
@@ -47,7 +48,13 @@ def contact(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
-            form.save()
+            subject = form.cleaned_data['subject']
+            email_message = f'''From: {form.cleaned_data['email']}
+                              \nName: {form.cleaned_data['name']}
+                              \n\n{form.cleaned_data['message']}'''
+            reciever = ['raghavagatadi12@gmail.com', ]
+            send_mail(
+                subject, email_message, form.cleaned_data['email'], reciever, fail_silently=False)
             return redirect('home')
     return render(request, 'contact.html', {
         'form': form
