@@ -52,7 +52,7 @@ def contact(request):
             email_message = f'''From: {form.cleaned_data['email']}
                               \nName: {form.cleaned_data['name']}
                               \n\n{form.cleaned_data['message']}'''
-            reciever = ['raghavagatadi12@gmail.com', ]
+            reciever = ['qcclub@iiitdwd.ac.in', ]
             send_mail(
                 subject, email_message, form.cleaned_data['email'], reciever, fail_silently=False)
             return redirect('home')
