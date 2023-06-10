@@ -1,8 +1,90 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    .container {
+        display: table;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center top;
+        background-size: 1140px;
+        background: #EEC885;
+        background: -webkit-linear-gradient(to left, black, #EEC885, #EEC885, black 1140px);
+        background: linear-gradient(to left, rgba(0,0,0,0.6), #EEC885, #EEC885, rgba(0,0,0,0.6) 1140px);
+    }
+    p{
+        opacity: 1;
+    }
+{% endblock style %}
 {% block title %}Home{% endblock title %}
-{% block home %}text-[#eeb95d] text-3xl font-medium max-sm:text-sm{% endblock home %}
+{% block home %}text-[#F9C56A] text-4xl font-medium max-sm:text-sm{% endblock home %}
 {% block content %}
-<div class="text-center">
-    <p class="text-white text-4xl">Welcome to <span class="text-[#eeb95d]">QUANTUM CLUB</span> IIIT Dharwad</p>
+<div class="ml-[5%] flex justify-center items-center mt-16">
+    <div class="w-[50%]">
+        <h1 class="text-white text-6xl font-bold">Leap into next age <br>of <span class="text-[#F9C56A]">computing</span> today!</h1>
+        <p class="text-x pt-4 font-medium text-[#D5D5D5]">From revolutionising finance and healthcare to optimising logistics and enhancing
+            cybersecurity, <span class="text-[#F9C56A] font-medium">Quantum Computing</span> is set to reshape the world, unlocking limitless potential for innovation and advancement.
+        </p>
+        <div class=" mt-8 flex gap-4">
+            <div class="px-12 py-3 bg-[#F9C56A] w-fit rounded-xl">
+                <p>UpComing Events</p>
+            </div>
+            <div class="px-12 py-3 bg-[#252525] text-white border border-[#363636] w-fit rounded-xl">
+                <p>Explore QC Club</p>
+            </div>
+        </div>
+        <div class="flex mt-4 ml-4 gap-3 text-white text-xl">
+            <div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#252525]"><i class="fa-brands fa-twitter"></i></div>
+            <div class="p-1 rounded-full px-[0.85rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#252525]"><i class="fa-brands fa-facebook-f"></i></div>
+            <div class="p-1 rounded-full px-3 font-bold pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#252525]"><i class="fa-brands fa-bold fa-instagram"></i></div>
+            <div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#252525]"><i class="fa-brands fa-github"></i></div>
+        </div>
+    </div>
+    <div>
+        <img class="w-[35rem]" src="{% static 'images/QuantumComputing.png' %}" alt="">
+    </div>
+</div>
+<div class="mx-[10%] text-white mt-8">
+    <div class="flex justify-around container py-14 rounded-full z-auto">
+    </div>
+</div>
+<div class="mx-[10%] text-white -mt-[7rem]">
+    <div class="flex justify-around  py-8 rounded-full z-auto">
+        <div class="flex items-center item">
+            <p class="text-6xl font-bold">200+</p>
+            <p class="font-light ml-2">Quantum Computing <br>resources</p>
+        </div>
+        <div class="flex items-center item">
+            <p class="text-6xl font-bold">20+</p>
+            <p class="font-light ml-2">QC <br>Projects</p>
+        </div>
+        <div class="flex items-center item">
+            <p class="text-6xl font-bold">30+</p>
+            <p class="font-light ml-2">QC <br>Blogs</p>
+        </div>
+    </div>
+</div>
+<div class="mr-[10%] mt-16 flex items-center">
+    <div class="w-[50%]">
+        <img class="" src="{% static 'images/quantumMachine.png' %}" alt="">
+    </div>
+    <div class="-ml-20 w-[50%]">
+        <p class="text-white text-6xl font-bold">What our <span class="text-[#F9C56A]">club</span> does?</p>
+        <p class="text-[#d5d5d5] mt-4 font-medium text-lg">"Welcome to our 
+            Quantum Computing Club, where we explore the fascinating world of 
+            quantum mechanics and its applications in computing. Our club is 
+            dedicated to deepening our understanding of quantum computing and 
+            fostering a community of passionate individuals who are eager to 
+            delve into this cutting-edge field. <br><br>
+            In our club, we engage in a variety of activities to broaden our 
+            knowledge and skills in quantum computing. We organize regular 
+            workshops and seminars where members can learn about the foundational 
+            principles of quantum mechanics, quantum algorithms, and quantum hardware. 
+            These sessions are led by experts in the field who provide valuable insights 
+            and guidance"</p>
+    </div>
 </div>
 {% endblock content %}
