@@ -1,4 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block magazine %}text-[#F9C56A] text-4xl font-medium max-sm:text-sm{% endblock magazine %}
 {% block title %}Team{% endblock title %}
-{% block content %}{% endblock content %}
+{% block content %}
+{% comment %} each div is sinple magzine post {% endcomment %}
+<div class="mx-auto w-[70%] mt-10 p-8 bg-[#252525] border-2 border-[#363636] rounded-3xl flex items-center gap-20">
+    <div class="w-[42.5%] ">
+        <img class=" rounded-xl border border-[#7e7e7e]" src="{% static 'images/chess.png' %}" alt="">
+    </div>
+    <div class="text-left w-[47.5%]">
+        <h1 class=" text-4xl text-[#F9C56A] font-semibold font-sans">"Title of the Magzine Post"</h1>
+        <p class="text-white text-lg mt-1">by "Author"</p>
+        <p class="text-xl font-medium text-[#9e9e9e] mt-6 mb-6">Breif over view - Lorem Ipsum is 
+            simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+            industry's standard dummy text ever since the 1500s, <br><br>
+            when an unknown printer took a galley of type and scrambled it to make a type specimen 
+            book. It has survived not only five centuries, but also the leap...</p>
+        <a href="" class="px-12 text-xl py-2 bg-[#F9C56A] rounded-lg">Read More</a>
+    </div>
+</div>
+{% comment %}  {% endcomment %}
+<div class="mx-auto w-[70%] mt-10 p-8 bg-[#252525] border-2 border-[#363636] rounded-3xl flex items-center gap-20">
+    <div class="w-[42.5%] ">
+        <img class=" rounded-xl border border-[#7e7e7e]" src="{% static 'images/chess.png' %}" alt="">
+    </div>
+    <div class="text-left w-[47.5%]">
+        <h1 class=" text-4xl text-[#F9C56A] font-semibold font-sans">"Title of the Magzine Post"</h1>
+        <p class="text-white text-lg mt-1">by "Author"</p>
+        <p class="text-xl font-medium text-[#9e9e9e] mt-6 mb-6">Breif over view - Lorem Ipsum is 
+            simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+            industry's standard dummy text ever since the 1500s, <br><br>
+            when an unknown printer took a galley of type and scrambled it to make a type specimen 
+            book. It has survived not only five centuries, but also the leap...</p>
+        <a href="" class="px-12 text-xl py-2 bg-[#F9C56A] rounded-lg">Read More</a>
+    </div>
+</div>
+{% comment %}  {% endcomment %}
+{% endblock content %}

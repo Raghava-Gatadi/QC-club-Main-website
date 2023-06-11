@@ -7,11 +7,11 @@
             <h1 class="text-6xl font-semibold mb-1"><span class=" text-[#F9C56A]">Connect </span>With Us</h1>
             <p class="text-white text-2xl">This message culd be your next step into <span class="text-[#F9C56A] font-medium">Quantum</span> World</p>
         </div>
-        <div class="mx-[15%] bg-[#131313] p-4 flex w-fit h-fit mt-2 flex-wrap">
-            <div>
+        <div class="mx-[15%] bg-[#131313] p-4 flex w-fit mt-2 flex-wrap rounded-xl border border-[#363636]">
+            <div class=" mx-auto">
                 <img class="w-[35rem]" src="https://cdni.iconscout.com/illustration/premium/thumb/contact-us-3483604-2912020.png" alt="contact image">
             </div>
-            <div>
+            <div class="items-center mx-auto">
                 <form action="{% url 'contact' %}" method='POST'>
                     {% csrf_token %}
                     <div class="my-2">

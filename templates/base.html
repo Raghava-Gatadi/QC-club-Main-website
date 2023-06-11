@@ -5,7 +5,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
-        footer{
+        footer, .poppins{
             font-family: Poppins;
         }
         *{
@@ -24,7 +24,7 @@
 </head>
 <body class="bg-black">
     <nav>
-        <div class="flex justify-center text-white text-4xl gap-16 py-4 items-center mb-4 max-sm:text-sm">
+        <div class="flex justify-center text-white text-3xl gap-10 py-4 items-center mb-4 max-sm:text-sm">
             <a class="{% block home %}{% endblock home %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'home' %}">Home</a>
             <a class="{% block gallery %}{% endblock gallery %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'gallery' %}">Gallery</a>
             <a class="{% block team %}{% endblock team %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'team' %}">Team</a>
@@ -34,6 +34,20 @@
           </div>
     </nav>
     {% block content %}{% endblock content %}
+    <div class="mx-auto max-w-[43rem] p-10 border-2 border-[#363636] bg-[#252525] rounded-2xl mt-8 flex items-end justify-between">
+        <div>
+            <p class="text-3xl text-white font-semibold">Never Miss an <span class="text-[#F9C56A]">Update</span></p>
+            <p class="text-[#d5d5d5] font-light">Get your email signed in so you <br> not miss any update</p>
+        </div>
+        <div>
+            <form action="">
+                <div class="bg-white text-[#363636] px-3 py-2 flex rounded-lg items-center">
+                    <div><input type="text" placeholder="Email" class="outline-none w-40 text-[#363636]"></div>
+                    <div><button type="submit" class="font-light px-3 py-1 bg-[#F9C56A] rounded-lg">Sign Up</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
     <footer>
         <div class="flex px-[10%] items-center bg-[#212121] mt-12">
             <div>
@@ -41,10 +55,10 @@
             </div>
             <div class="w-full">
                 <div class="flex mt-4 gap-3 text-white text-xl pl-[40%]">
-                    <div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-twitter"></i></div>
-                    <div class="p-1 rounded-full px-[0.85rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-facebook-f"></i></div>
-                    <div class="p-1 rounded-full px-3 font-bold pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-bold fa-instagram"></i></div>
-                    <div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-github"></i></div>
+                    <a href=""><div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-twitter"></i></div></a>
+                    <a href=""><div class="p-1 rounded-full px-[0.85rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-facebook-f"></i></div></a>
+                    <a href=""><div class="p-1 rounded-full px-3 font-bold pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-bold fa-instagram"></i></div></a>
+                    <a href=""><div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-github"></i></div></a>
                 </div>
                 <div class="flex text-left mt-6">
                     <div class="w-[50%] pl-[30%]">
