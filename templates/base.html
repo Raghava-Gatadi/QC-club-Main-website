@@ -34,41 +34,41 @@
           </div>
     </nav>
     {% block content %}{% endblock content %}
-    <div class="mx-auto max-w-[43rem] p-10 border-2 border-[#363636] bg-[#252525] rounded-2xl mt-8 flex items-end justify-between">
+    <div class="mx-auto max-w-[43rem] p-10 border-2 border-[#363636] bg-[#252525] rounded-2xl mt-8 sm:flex items-end justify-between">
         <div>
             <p class="text-3xl text-white font-semibold">Never Miss an <span class="text-[#F9C56A]">Update</span></p>
             <p class="text-[#d5d5d5] font-light">Get your email signed in so you <br> not miss any update</p>
         </div>
-        <div>
+        <div class="max-sm:mt-3">
             <form action="https://script.google.com/macros/s/AKfycbzUxtbRpzVDrmY1aOin9VNTy5wMwPkfEbjikYx1Vhsy68ja3um8zGeOepdU1JWqn-lu/exec" method="POST">
-                <div class="bg-white text-[#363636] px-3 py-2 flex rounded-lg items-center">
-                    <div><input type="text" placeholder="Email" name="email" class="outline-none w-40 text-[#363636]"></div>
+                <div class="bg-white text-[#363636] px-3 py-2 flex rounded-lg items-center justify-between">
+                    <div><input type="text" placeholder="Email" name="email" class="outline-none w-44 pl-2 text-[#363636]"></div>
                     <div><button type="submit" class="font-light px-3 py-1 bg-[#F9C56A] rounded-lg">Sign Up</button></div>
                 </div>
             </form>
         </div>
     </div>
     <footer>
-        <div class="flex px-[10%] items-center bg-[#212121] mt-12">
+        <div class="md:flex justify-between px-[10%] items-center bg-[#212121] mt-12">
             <div>
                 <img class="w-[35rem]" src="{% static 'images/QuantumComputing.png' %}" alt="">
             </div>
             <div class="w-full">
-                <div class="flex mt-4 gap-3 text-white text-xl pl-[40%]">
+                <div class="flex mt-4 gap-3 text-white text-xl md:pl-[40%] max-sm:pl-[27.5%]">
                     <a href=""><div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-twitter"></i></div></a>
                     <a href=""><div class="p-1 rounded-full px-[0.85rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-facebook-f"></i></div></a>
                     <a href=""><div class="p-1 rounded-full px-3 font-bold pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-bold fa-instagram"></i></div></a>
                     <a href=""><div class="p-1 rounded-full px-[0.65rem] pt-2 hover:bg-[#F9C56A] hover:text-black bg-[#181818]"><i class="fa-brands fa-github"></i></div></a>
                 </div>
-                <div class="flex text-left mt-6">
-                    <div class="w-[50%] pl-[30%]">
+                <div class="flex text-left mt-6 gap-16 justify-around">
+                    <div class="">
                         <h1 class="text-2xl text-[#F9C56A] font-semibold">About Us</h1>
                         <p class="text-white my-1">Aim</p>
                         <p class="text-white my-1">Vision</p>
                         <p class="text-white my-1">Team</p>
                         <p class="text-white my-1">Recruitment</p>
                     </div>
-                    <div class="w-[50%] pl-[10%]">
+                    <div class="">
                         <h1 class="text-2xl text-[#F9C56A] font-semibold">Resources</h1>
                         <p class="text-white my-1">E - Books</p>
                         <p class="text-white my-1">Youtube Courses</p>
