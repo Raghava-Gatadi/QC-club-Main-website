@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contact %}text-[#F9C56A] text-4xl font-medium max-sm:text-sm{% endblock contact %}
 {% block title %}Contact us{% endblock title %}
 {% block content %}
@@ -7,9 +8,9 @@
             <h1 class="text-6xl font-semibold mb-1"><span class=" text-[#F9C56A]">Connect </span>With Us</h1>
             <p class="text-white text-2xl">This message could be your next step into <span class="text-[#F9C56A] font-medium">Quantum</span> World</p>
         </div>
-        <div class="mx-[15%] bg-[#131313] p-4 flex w-fit mt-2 flex-wrap rounded-xl border border-[#363636]">
+        <div class="mx-auto bg-[#131313] p-4 flex w-fit mt-2 flex-wrap gap-6 items-center rounded-xl border border-[#363636]">
             <div class=" mx-auto">
-                <img class="w-[35rem]" src="https://cdni.iconscout.com/illustration/premium/thumb/contact-us-3483604-2912020.png" alt="contact image">
+                <img class="w-[25rem]" src="{% static 'images/IBM_QuantumComputing.jpeg' %}" alt="contact image">
             </div>
             <div class="items-center mx-auto">
                 <form action="{% url 'contact' %}" method='POST'>
