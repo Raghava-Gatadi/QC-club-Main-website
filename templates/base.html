@@ -16,6 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,16 +25,17 @@
 </head>
 <body class="bg-black">
     <nav>
-        <div class="flex justify-center text-white text-3xl gap-10 py-4 items-center mb-4 max-md:text-sm">
-            <a class="{% block home %}{% endblock home %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'home' %}">Home</a>
-            <a class="{% block gallery %}{% endblock gallery %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'gallery' %}">Gallery</a>
-            <a class="{% block team %}{% endblock team %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'team' %}">Team</a>
-            <a class="{% block blogs %}{% endblock blogs %} hover:scale-[1.1] hover:text-[#F9C56A]" href="https://blog-qc-club.netlify.app/">Blogs</a>
-            <a class="{% block magazine %}{% endblock magazine %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'magazine' %}">Magazines</a>
-            <a class="{% block contact %}{% endblock contact %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'contact' %}">Contact</a>
+        <div class="max-md:flex-col max-md:z-10 max-md:mx-auto max-md:hidden md:flex justify-center text-white text-3xl gap-10 py-4 items-center mb-4 max-md:text-xl" id="items">
+            <div class="max-md:mb-3 text-center"><a class="{% block home %}{% endblock home %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'home' %}">Home</a></div>
+            <div class="max-md:mb-3 text-center"><a class="{% block gallery %}{% endblock gallery %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'gallery' %}">Gallery</a></div>
+            <div class="max-md:mb-3 text-center"><a class="{% block team %}{% endblock team %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'team' %}">Team</a></div>
+            <div class="max-md:mb-3 text-center"><a class="{% block blogs %}{% endblock blogs %} hover:scale-[1.1] hover:text-[#F9C56A]" href="https://blog-qc-club.netlify.app/">Blogs</a></div>
+            <div class="max-md:mb-3 text-center"><a class="{% block magazine %}{% endblock magazine %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'magazine' %}">Magazines</a></div>
+            <div class="max-md:mb-3 text-center"><a class="{% block contact %}{% endblock contact %} hover:scale-[1.1] hover:text-[#F9C56A]" href="{% url 'contact' %}">Contact</a></div>
           </div>
+          <span class="md:hidden absolute top-4 right-0 text-white text-4xl pr-2"><ion-icon name="menu" onclick="Menu(this)"></ion-icon></span>
     </nav>
-    {% block content %}{% endblock content %}
+    <div class="mt-16" id="base">{% block content %}{% endblock content %}</div>
     <div class="mx-auto max-w-[43rem] p-10 border-2 border-[#363636] bg-[#252525] rounded-2xl mt-8 sm:flex items-end justify-between">
         <div>
             <p class="text-3xl text-white font-semibold">Never Miss an <span class="text-[#F9C56A]">Update</span></p>
@@ -82,5 +84,23 @@
             </div>
         </div>
     </footer>
+    <script>
+         function Menu(e) {
+            let list = document.querySelector("#items");
+            let main = document.querySelector("#main");
+            let base = document.querySelector("#base");
+            e.name === "menu"
+               ? ((e.name = "close"),
+                 list.classList.add(["top-[80px]"]),
+                 list.classList.remove(["max-md:opacity-0"]),
+                 list.classList.remove(["max-md:hidden"]),
+                 main.classList.remove(["-mt-36"]),
+                 base.classList.remove(["mt-16"]))
+               : ((e.name = "menu"),
+                 list.classList.remove(["top-[80px]"]),
+                 list.classList.add(["max-md:opacity-0"]),
+                 main.classList.add(["-mt-36"]));
+         }
+      </script>
 </body>
 </html>
